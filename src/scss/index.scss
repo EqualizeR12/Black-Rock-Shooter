@@ -1,0 +1,58 @@
+// @import url('https://fonts.googleapis.com/css2?family=Cantarell:ital,wght@0,700;1,400;1,700&family=Caveat:wght@400;700&family=Fredericka+the+Great&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Cantarell:ital,wght@0,400;0,700;1,400;1,700&family=Passion+One:wght@400;700;900&display=swap');
+
+@import "./auto-scroll.scss";
+@import "./navbar.scss";
+@import "./banner.scss";
+@import "./description-game.scss";
+@import "./about.scss";
+@import "./feedback.scss";
+@import "./timer.scss";
+@import "./variables.scss";
+@import "./footer.scss";
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Cantarell", sans-serif;
+  background: fixed no-repeat url('../assets/site-background.jpg');
+  background-size: cover;
+//   ::-webkit-scrollbar {
+//     display: none;
+// }
+
+.mobile-nav__wrapper {
+  overflow: hidden;
+}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+.container {
+  width: $container;
+  margin: 0 auto;
+}

@@ -1,0 +1,72 @@
+@mixin media-max-width($width) {
+  @media (max-width: $width) {
+    @content;
+  }
+}
+
+#navbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: rgba(17, 3, 17, 0.94);
+
+  height: 50px;
+  width: 100%;
+  border: none;
+  z-index: 101;
+}
+
+.navbar-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 101;
+
+  .navbar-logo {
+    max-width: 150px;
+    height: 18px;
+    margin: 0 20px;
+
+    @include media-max-width(550px) {
+        margin: 10px 20px;
+        height: 30px;
+      }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .navbar-content__list {
+    position: relative;
+    height: 50px;
+    width: 100%;
+
+    @include media-max-width(550px) {
+      display: none;
+    }
+
+    .navbar-content__list-ul {
+      display: flex;
+      flex-direction: row;
+      position: fixed;
+      padding: 0;
+
+      li {
+        display: flex;
+        list-style: none;
+      }
+
+      a {
+        text-decoration: none;
+        color: white;
+        font-size: 12px;
+      }
+    }
+  }
+}

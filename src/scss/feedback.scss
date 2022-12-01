@@ -1,0 +1,117 @@
+@mixin media-max-width($width) {
+  @media (max-width: $width) {
+    @content;
+  }
+}
+
+.feedback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: 560px;
+  margin-top: 40px;
+  overflow: hidden;
+  background-color: rgba(73,14,72, 1);
+
+  @include media-max-width(700px) {
+    height: 800px;
+  }
+
+  @include media-max-width(700px) {
+    height: 1000px;
+  }
+
+  .feedback__all-blocks {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+    z-index: 1;
+
+    .feedback__blocks {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: flex-start;
+
+      @include media-max-width(700px) {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .feedback__blocks-items {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        position: relative;
+
+        min-width: 200px;
+        margin: 10px;
+        background: rgba(255, 255, 255, 0.1);
+
+        @include media-max-width(700px) {
+          width: 90%;
+          margin: 20px 0;
+        }
+
+        .gamer-photo {
+          position: absolute;
+          top: -25px;
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+        }
+
+        .gamer-feedback {
+          color: #ffffff;
+          margin: 5px;
+          padding-top: 50px;
+        }
+
+        .gamer-name {
+          color: #ffffff;
+          font-weight: 700;
+          opacity: 0.6;
+        }
+      }
+    }
+  }
+
+  .feedback__background-color {
+    background-color: rgba(73, 14, 72, 0.2);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    z-index: 0;
+  }
+
+  .feedback__background {
+    position: absolute;
+    height: 800px;
+    width: 1300px;
+
+    @include media-max-width(700px) {
+      height: 1000px;
+      width: 1500px;    }
+
+    overflow: hidden;
+
+    .feedback__background-img {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      pointer-events: none;
+      opacity: 0.8;
+    }
+  }
+}

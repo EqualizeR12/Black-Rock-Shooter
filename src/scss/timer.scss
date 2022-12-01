@@ -1,0 +1,106 @@
+@mixin media-max-width($width) {
+  @media (max-width: $width) {
+    @content;
+  }
+}
+
+.timer-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  height: 850px;
+  overflow: hidden;
+  margin-top: 40px;
+  z-index: 1;
+  transform: translate3d(0px, 0px, 0px);
+
+  .timer__background {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -100;
+    background-color: rgba(73, 14, 72, 0.2);
+
+    img {
+      position: fixed;
+      object-fit: cover;
+      object-position: 50% 50%;
+      max-width: none;
+      top: 0px;
+      width: 100%;
+      height: 1200px;
+      pointer-events: none;
+      opacity: 0.8;
+    }
+  }
+
+  .promotion__timer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    z-index: 1;
+
+    h3 {
+      color: #ffffff;
+    }
+
+    .timer {
+      margin-top: 15px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+
+      @include media-max-width(510px) {
+        justify-content: center;
+      }
+    }
+
+    .timer__block {
+      display: flex;
+      flex-direction: column;
+
+      margin: 40px 10px 0px 10px;
+
+      .timer__block-date {
+        color: #ffffff;
+        font-family: 'Passion One', sans-serif;
+        font-size: 14px;
+      }
+
+      .badge-succces {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 130px;
+        height: 100px;
+        margin: 10px;
+        background: rgba(0, 0, 0, 0.3);
+        transform: skew(-4deg);
+      }
+    }
+
+    .pre-order {
+      width: 150px;
+      height: 50px;
+      font-family: 'Cantarell', sans-serif;
+      color: #ffffff;
+      border: 2px solid #ffffff;
+      padding: 10px;
+      margin: 40px auto 0px auto;
+      transform: skewX(-4deg);
+      text-decoration: none;
+      transition: 0.5s;
+
+      &:hover {
+        background: #b63a6b;
+        border: 2px solid #b63a6b;
+      }
+    }
+  }
+}
