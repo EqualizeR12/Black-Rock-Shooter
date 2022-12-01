@@ -22,13 +22,8 @@ body {
   font-family: "Cantarell", sans-serif;
   background: fixed no-repeat url('../assets/site-background.jpg');
   background-size: cover;
-//   ::-webkit-scrollbar {
-//     display: none;
-// }
-
-.mobile-nav__wrapper {
-  overflow: hidden;
-}
+  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
 }
 
 h1,
